@@ -1,0 +1,1 @@
+﻿insert into AMIGOS (Nome, Sobrenome, Aniversario) values ('Thais', 'Schontag', '06-07-1991'), ('Amigo1', 'Silva', '03-05-1943'), ('Pessoa2', 'Souza', '02-12-1981')

@@ -1,0 +1,27 @@
+﻿@model AssessmentAgendaAniversariosAspNet.Views.Amigo.CreateModel
+@{
+}
+
+<form class="col-4" method="post" action="/Amigo/Create">
+    @Html.AntiForgeryToken()
+  <div class="form-group">
+    <label>Nome:</label>
+    <input type="text" class="form-control" name="Nome" placeholder="Digite o nome">
+  </div>
+  <br>
+  <div class="form-group">
+    <label>Sobrenome:</label>
+    <input type="text" class="form-control" name="Sobrenome" placeholder="Digite o sobrenome">
+  </div>
+  <br>
+    <div class="form-group">
+    <label>Data de aniversário:</label>
+    <input type="date" class="form-control" name="Aniversario">
+  </div>
+  <br>
+  <button type="submit" class="btn btn-dark">Enviar</button>
+</form>
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>

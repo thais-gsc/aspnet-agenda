@@ -1,0 +1,14 @@
+﻿@model Amigo
+@{
+}
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">@Model.Nome @Model.Sobrenome</h5>
+    <h6 class="card-subtitle mb-2 text-muted">@Model.Aniversario.ToString("dd 'de' MMMM 'de' yyyy")</h6>
+    <p class="card-text">Faltam @Model.DiasAteAniversario() dia(s) para este aniversário</p>
+  </div>
+</div>
+<br />
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>

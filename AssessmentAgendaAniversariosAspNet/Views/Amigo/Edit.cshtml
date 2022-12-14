@@ -1,0 +1,23 @@
+﻿@model Amigo
+@{
+}
+
+<form class="col-4" method="post" action="/Amigo/Edit/@Model.Id">
+    @Html.AntiForgeryToken()
+  <div class="form-group">
+    <label>Nome:</label>
+    <input type="text" class="form-control" name="Nome" value="@Model.Nome" placeholder="@Model.Nome">
+  </div>
+  <br>
+  <div class="form-group">
+    <label>Sobrenome:</label>
+    <input type="text" class="form-control" name="Sobrenome" value="@Model.Sobrenome" placeholder="@Model.Sobrenome">
+  </div>
+  <br>
+    <div class="form-group">
+    <label>Data de aniversário:</label>
+    <input type="date" class="form-control" name="Aniversario">
+  </div>
+  <br>
+  <button type="submit" class="btn btn-dark">Salvar alterações</button>
+</form>

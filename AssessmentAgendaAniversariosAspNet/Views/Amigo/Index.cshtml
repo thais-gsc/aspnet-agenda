@@ -1,0 +1,63 @@
+﻿@model List<Amigo>
+@{
+}
+
+<h1 class="text-center">Hoje é @(DateTime.Now.ToString("dd/MM/yyyy"))</h1>
+<br>
+
+<table class="table bg-info text-center">
+  <thead>
+    <tr>
+        <th scope="rowgroup">Aniversariante(s) do dia:</th>
+    </tr>
+  </thead>
+      @foreach(var aniversariante in Model){
+          if (@aniversariante.DiasAteAniversario() == 0){
+  <tbody>
+    <tr>
+      <td>@aniversariante.Nome</td>
+    </tr>
+  </tbody>
+      }}
+</table>
+
+<table class="table table-hover text-center">
+      
+  <thead>
+     <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Sobrenome</th>
+      <th scope="col">Aniversário</th>
+      <th scope="col">Dias até o Aniversário</th>
+      <th scope="col">Opções</th>
+    </tr>
+  </thead>
+        @foreach (var amigo in Model)
+        {
+  <tbody>
+    <tr>
+      <th scope="row">@amigo.Id</th>
+      <td>@amigo.Nome</td>
+      <td>@amigo.Sobrenome</td>
+          <td>@amigo.Aniversario.ToString("dd 'de' MMMM")</td>
+      <td>@amigo.DiasAteAniversario()</td>
+      <td>
+        @Html.ActionLink("Editar", "Edit", new { id = amigo.Id }) |
+        @Html.ActionLink("Detalhes", "Details", new { id = amigo.Id }) |
+        @Html.ActionLink("Deletar", "Delete", new { id = amigo.Id })
+      </td>
+    </tr>
+        </tbody>
+      }
+</table>
+<br>
+<h5>Pesquisar amigo</h5>
+
+<form asp-action="Index" method="get">
+    <div class="form-group col-4">
+        <label class="mt-2">Nome ou sobrenome:</label>
+        <input type="text" name="pesquisa" class="form-control mt-2" value="@ViewData["Filtro"]" />
+        <button type="submit" class="btn btn-dark mt-2">Pesquisar</button>
+    </div>
+</form>
